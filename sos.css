@@ -238,3 +238,37 @@ body {
         right: 10%;
     }
 }
+
+
+
+#flod {
+    background-image: url(img/b%C3%B8lgen-03.svg);
+    background-size: 500% 100%;
+    width: 100vw;
+    height: 56.25vw;
+    position: absolute;
+}
+
+.flod_hide {
+    display: none;
+}
+
+.flod_ind {
+    animation-name: flod_kf;
+    animation-duration: 2s;
+    animation-timing-function: steps(4);
+    animation-fill-mode: both;
+}
+
+/*NÅR FUNKTION KALDES I JS: $("#flod).removeClass("flod_hide");,
+$("#flod).addClass("flod_ind");
+*/
+
+@keyframes flod_kf {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: -400%;
+    }
