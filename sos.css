@@ -1,6 +1,7 @@
-body {
+    body {
     margin: 0;
 }
+
 
 /*********** Baggrund ************/
 
@@ -18,10 +19,11 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-
 }
 
+
 /*********** Baggrund Slut *********/
+
 
 /*********** Forgrund *************/
 
@@ -48,7 +50,9 @@ body {
     margin-top: 40%;
 }
 
+
 /*********** Forgrund slut ********/
+
 
 /*********** Skyer    *************/
 
@@ -61,16 +65,12 @@ body {
     position: absolute;
     top: 10%;
     left: 0%;
-
-
     animation-name: sky1_kf;
     animation-duration: 30s;
     animation-timing-function: linear;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
-
     z-index: 1;
-
 }
 
 @keyframes sky1_kf {
@@ -91,15 +91,12 @@ body {
     position: absolute;
     top: 3%;
     right: 0%;
-
     animation-name: sky2_kf;
     animation-duration: 20s;
     animation-timing-function: linear;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
-
     z-index: 1;
-
 }
 
 @keyframes sky2_kf {
@@ -120,16 +117,12 @@ body {
     position: absolute;
     top: 19%;
     right: 0%;
-
-
-
     animation-name: sky3_kf;
     animation-duration: 35s;
     animation-timing-function: linear;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     z-index: 1;
-
 }
 
 @keyframes sky3_kf {
@@ -141,14 +134,15 @@ body {
     }
 }
 
+
 /********** Skyer slut ************/
+
 
 /********** Start knap ************/
 
 #startknap {
     background-color: #202532;
     border-radius: 50%;
-
     width: 30vw;
     height: 15vw;
     cursor: pointer;
@@ -160,7 +154,6 @@ body {
     position: absolute;
     top: 24vw;
     left: 35vw;
-
     animation-name: startknap_kf;
     animation-duration: 1s;
     animation-timing-function: linear;
@@ -171,45 +164,67 @@ body {
     0% {
         bottom: -30%;
     }
-
     100% {
         bottom: 30%;
     }
 }
 
+
 /************* Fugl med skilt ****************/
 
-#fugl {
-    background-image: url(img/fugl.svg);
-    background-repeat: no-repeat;
-    background-size: 50%;
-    width: 20.31vw;
-    height: 20.33vw;
+#fugl_container {
     position: absolute;
-    top: 10%;
-    right: 0%;
+    top: 10vw;
+    z-index: 1;
+}
+
+#fugl_sprite {
+    background-image: url(fugl_spritesheet.svg);
+    /* 1121x806 */
+    width: 60vw;
+    height: 43vw;
+    background-size: 400% 100%;
+}
+
+.fugl_start_pos {
+    left: -100%;
 }
 
 .fugl_flyver {
     animation-name: fugl_flyver_kf;
-    animation-duration: 5s;
-    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
     animation-fill-mode: both;
-    z-index: 1;
-    animation-play-state: paused;
-
+    animation-timing-function: linear;
 }
-
 
 @keyframes fugl_flyver_kf {
     0% {
-        right: -30%;
+        left: -100%;
     }
     100% {
-        right: 100%;
+        left: 100%;
     }
 }
 
+.fugl_flyvecycle {
+    animation-name: fugl_flyvecycle_kf;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(4);
+}
+
+@keyframes fugl_flyvecycle_kf {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: -400% 0%;
+    }
+}
+
+
+/*************** Eva **********************/
 
 #eva {
     background-image: url(img/Eva-01.svg);
@@ -239,8 +254,6 @@ body {
     }
 }
 
-
-
 #flod {
     background-image: url(img/b%C3%B8lgen-03.svg);
     background-size: 500% 100%;
@@ -260,6 +273,7 @@ body {
     animation-fill-mode: both;
 }
 
+
 /*NÅR FUNKTION KALDES I JS: $("#flod).removeClass("flod_hide");,
 $("#flod).addClass("flod_ind");
 */
@@ -268,7 +282,6 @@ $("#flod).addClass("flod_ind");
     0% {
         background-position: 0;
     }
-
     100% {
         background-position: -400%;
     }
